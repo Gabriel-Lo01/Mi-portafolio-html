@@ -43,6 +43,9 @@ a { color: inherit; }
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .Proyectos ol {
@@ -171,3 +174,4 @@ a { color: inherit; }
     grid-template-columns: 1fr;
   }
 }
+
