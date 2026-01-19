@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    /* Aplicamos grid: Estructura */
+    display: grid;
+    /* Repeat armamos columnas (5, 2fr Fr= Proporcion si todas tienen el mismo fr -> todas miden igual */
+    grid-template-columns: repeat(5, 2fr);
+    /* Aplicare 4 filas, cada fila con tamaños de 150px de alto*/
+    grid-template-rows: repeat(4, 150px);
+    /* Coloco el grid en filas  */
+    grid-auto-flow: row;
+    /* Especificamos areas */
+    grid-template-areas: 
+    "nav header header header header"
+    "nav section section section aside"
+    "nav section1 section1 section1 aside"
+    "nav footer footer footer footer"
+    ;
+
+    /* Generamos espacios entre filas y columnas  */
+    row-gap: 10px;
+    column-gap: 15px;
+}
+.nav{
+    grid-area: nav;
+    background-color: rgb(2, 241, 34);
+}
+.header{
+    grid-area: header;
+    background-color: yellow;
+    border: 10px solid rgb(2, 241, 34);
+}
+.section{
+    grid-area: section;
+    background-color: rgba(27, 238, 238, 0.486);
+}
+.section1{
+    grid-area: section1;
+    background-color: rgb(149, 57, 235);
+}
+.aside{
+    grid-area: aside;
+    background-color: rgb(255, 69, 199);
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(102, 102, 231);
+}
+
+/* Disponsive Design */
+@media (max-width: 360px) {
+    .container{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6,auto);
+        grid-template-areas: 
+        "nav"
+        "header"
+        "section"
+        "section1"
+        "aside"
+        "footer"
+        ;
+    }
+}
+@media (min-width:768px) {
+    .container{
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4,2fr);
+    grid-template-areas: 
+    /* En caso de agregar espacios vacios "." */
+    "header"
+    "nav"
+    "section1"
+    "section"
+    "aside"
+    "footer"
+    ;
+
+    }
+}

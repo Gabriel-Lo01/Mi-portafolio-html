@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.item{
+    width: 300px;
+    height: 300px;
+}
+/* Vamos a llamar e aplicar para los hijos PseudoClase captura al hijo .item:nth-child(1) */
+
+.item:nth-child(1){
+    background-color: blueviolet;
+}
+.item:nth-child(2){
+    background-color: yellow;
+}
+.item:nth-child(3){
+    background-color: blue;
+}
+
+/* Responsive Design */
+
+@media (max-width:368px) {
+    .container{
+        display: grid;
+        justify-content: center;
+    }
+    .item{
+        width: 150px;
+        height: 150px;
+    }
+}
