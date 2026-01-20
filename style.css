@@ -49,6 +49,7 @@ a { color: inherit; }
 }
 .p{
   color: white;
+  font-size: 12px;
 }
 
 .Proyectos ol {
@@ -177,5 +178,6 @@ a { color: inherit; }
     grid-template-columns: 1fr;
   }
 }
+
 
 
