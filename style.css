@@ -47,6 +47,9 @@ a { color: inherit; }
   justify-content: center;
   align-items: center;
 }
+.p{
+  color: white;
+}
 
 .Proyectos ol {
   list-style: none;
@@ -174,4 +177,5 @@ a { color: inherit; }
     grid-template-columns: 1fr;
   }
 }
+
 
