@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PseudoClase que seleciciona elemento raiz del dom. ejemplo body con un background*/
+:root{
+    /* Variables Globales  */
+
+    --main-dark-grey: #92a7a2;
+    --main-dark-black : #111314;
+    --main-light-orange: #ffca1b;
+    --main-orange: #c7a32d;
+    --main-white-color: #dfdfdf;
+    --main-beige-color: #f5f1e9;
+    --main-font-family: 'Montserrat', sans-serif;
+    
+}
+
+body{
+    background-color: var(--main-dark-black);
+    color: var(--main-white-color);
+    font-family: var(--main-font-family);
+}
+
+h1{
+    font-size: 4rem;
+}
+
+header{
+    display: flex;
+    align-content: space-between;
+    background-color: var(--main-dark-black);
+    padding: 1rem 2rem;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--main-white-color);
+    font-size: 2rem;
+}
+
+.menu{
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    background-color: var(--main-dark-black);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 5;
+    top: 40px;
+    right: -30px;
+}
+
+/* Despliego las opciones del menu */
+.menu:hover .dropdown{
+    display: block;
+}
+.dropdown li{
+    /* Oculto los puntos de la lista */
+    list-style: none;
+    margin-bottom: 10px;
+}
+.inLineList{
+    margin-top: 3%;
+}
+.description{
+    margin-bottom: 3%;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+main img{
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.products{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 2px solid var(--main-dark-grey);
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--main-dark-black);
+    margin-bottom: 3%;
+    box-shadow: 1px 4px 20px var(--main-dark-grey);
+}
+.imgContainer, .newArrivalContainer{
+    position: relative;
+}
+.newArrivalContainer{
+    z-index: 10;
+}
+.newArrivalContainer .sticker{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    background: url('./assets/sticker.png');
+    background-size: 81px;
+    top:-15px;
+    right: -15px;
+    animation: spin 15s cubic-bezier(0, 0.66, 1, 1) infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(1turn);
+    }
+}
+.newArrivalContainer .msg{
+    color: var(--main-dark-black);
+    text-align: center;
+    font-size: 1rem;
+    width: 75px;
+    position: absolute;
+    top: 10px;
+    right: -16px;
+}
+.imgContainer .heart{
+    position: absolute;
+    top: 4%;
+    width: 78%;
+    color: var(--main-dark-black);
+}
+.products button,
+.products button:visited{
+    background-color: var(--main-light-orange);
+    border: 2px solid var(--main-orange);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+    box-shadow: 0px 5px 8px var(--main-orange);
+    text-align: center;
+    margin: 3px 30px 15px;
+}
+
+.products button{
+    animation: outColorHover 1 sec ease forwards;
+}
+.products button:hover{
+    animation: inColorHover 1 sec ease forwards;
+ }
+
+@keyframes inColorHover{
+from{
+    background-color: var(--main-light-orange);
+}
+
+to{
+    background-color: var(--main-orange);
+}
+}
+
+@keyframes outColorHover{
+from{
+    background-color: var(--main-orange);
+}
+to{
+    background-color: var(--main-light-orange);
+}
+}
+
+.products button a,
+.products button a:visited{
+    text-decoration: none;
+    color:  var(--main-dark-black);
+    font-weight: bold;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .products{
+        width: 40%;
+        margin: 4% 0;
+    }
+    Main img{
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+}
+@media (min-width:320px) and (max-width:767px) {
+    main{
+        flex-direction: column;
+        width: 100%;
+    }
+    .products{
+        width: 90%;
+        margin: 4% auto;
+    }
+    Main img{
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+}
